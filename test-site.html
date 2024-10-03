@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luke O'Brien</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap" rel="stylesheet"> <!-- Link to Roboto Mono font -->
+    <style>
+        body {
+            font-family: 'Roboto Mono', monospace; /* Use Roboto Mono font */
+            background-color: #000000;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+            text-align: center; /* Center text for the whole body */
+            color: rgb(255, 255, 255); /* Set text color */
+        }
+
+        h1 {
+            font-size: 25px;
+            margin-top: 0px; /* Add some space between the image and the h1 */
+        }
+
+        .logo {
+            max-width: 100px; /* Maintain max-width */
+            margin: 0 auto; /* Center the image */
+            display: block; /* Make the image a block element to center it */
+        }
+        
+        .bio {
+            border: 1px solid #ffffff; /* Border around the bio */
+            padding: 15px; /* Padding inside the bio */
+            max-width: 500px; /* Max width for the bio */
+            margin: 20px auto; /* Center the bio */
+            font-size: 18px; /* Font size for the bio */
+            background-color: transparent; /* No background color */
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            gap: 20px; /* Space between images */
+        }
+
+        .image-container {
+            position: relative;
+            overflow: hidden; /* Hide overflow for hover effect */
+            border: 1px solid #ffffff; /* Optional border */
+        }
+
+        .image-container img {
+            width: 100%; /* Make images responsive */
+            display: block;
+        }
+
+        .hover-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ffffff;
+            font-size: 24px;
+            opacity: 0; /* Start hidden */
+            transition: opacity 0.3s; /* Smooth transition */
+        }
+
+        .image-container:hover .hover-text {
+            opacity: 1; /* Show text on hover */
+        }
+
+        .image-container:hover img {
+            filter: brightness(0.7); /* Darken image on hover */
+        }
+    </style>
+</head>
+<body>
+    <img src="lobhtml.png" alt="Luke O'Brien Website" class="logo" />
+    <h1>Luke O'Brien</h1>
+    <div class="bio">
+        Web developer focused on classic UI/UX design, emulation and niche operating systems.
+    </div>
+    <h1>Image Gallery</h1>
+    <div class="gallery">
+        <a href="https://www.youtube.com/watch?v=Ni9HJjzLtBM" class="image-container" target="_blank">
+            <img src="sample-1.png" alt="Image 1">
+            <div class="hover-text">XPnote v1.1</div>
+        </a>
+        <a href="https://link2.com" class="image-container" target="_blank">
+            <img src="sample-2.png" alt="Image 2">
+            <div class="hover-text">Description 2</div>
+        </a>
+        <a href="https://link3.com" class="image-container" target="_blank">
+            <img src="sample-3.png" alt="Image 3">
+            <div class="hover-text">Description 3</div>
+        </a>
+        <a href="https://link4.com" class="image-container" target="_blank">
+            <img src="sample-4.png" alt="Image 4">
+            <div class="hover-text">Description 4</div>
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luke O'Brien</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap" rel="stylesheet"> <!-- Link to Roboto Mono font -->
+    <style>
+        body {
+            font-family: 'Roboto Mono', monospace; /* Use Roboto Mono font */
+            background-color: #000000;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+            text-align: center; /* Center text for the whole body */
+            color: rgb(255, 255, 255); /* Set text color */
+        }
+
+        h1 {
+            font-size: 25px;
+            margin-top: 0px; /* Add some space between the image and the h1 */
+        }
+
+        .logo {
+            max-width: 100px; /* Maintain max-width */
+            margin: 0 auto; /* Center the image */
+            display: block; /* Make the image a block element to center it */
+        }
+        
+        .bio {
+            border: 1px solid #ffffff; /* Border around the bio */
+            padding: 15px; /* Padding inside the bio */
+            max-width: 500px; /* Max width for the bio */
+            margin: 20px auto; /* Center the bio */
+            font-size: 18px; /* Font size for the bio */
+            background-color: transparent; /* No background color */
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            gap: 20px; /* Space between images */
+        }
+
+        .image-container {
+            position: relative;
+            overflow: hidden; /* Hide overflow for hover effect */
+            border: 1px solid #ffffff; /* Optional border */
+            cursor: pointer; /* Change cursor to pointer */
+        }
+
+        .image-container img {
+            width: 100%; /* Make images responsive */
+            display: block;
+        }
+
+        .hover-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ffffff;
+            font-size: 24px;
+            opacity: 0; /* Start hidden */
+            transition: opacity 0.3s; /* Smooth transition */
+        }
+
+        .image-container:hover .hover-text {
+            opacity: 1; /* Show text on hover */
+        }
+
+        .image-container:hover img {
+            filter: brightness(0.7); /* Darken image on hover */
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+        }
+
+        .modal img {
+            margin: auto;
+            display: block;
+            max-width: 80%; /* Responsive max width */
+            max-height: 80%; /* Responsive max height */
+            margin-top: 5%; /* Top margin for spacing */
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #ffffff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <img src="lobhtml.png" alt="Luke O'Brien Website" class="logo" />
+    <h1>Luke O'Brien</h1>
+    <div class="bio">
+        Web developer focused on classic UI/UX design, emulation, and niche operating systems.
+    </div>
+    <h1>Image Gallery</h1>
+    <div class="gallery">
+        <div class="image-container" onclick="openModal('sample-1.png')">
+            <img src="sample-1.png" alt="Image 1">
+            <div class="hover-text">Description 1</div>
+        </div>
+        <div class="image-container" onclick="openModal('sample-2.png')">
+            <img src="sample-2.png" alt="Image 2">
+            <div class="hover-text">Description 2</div>
+        </div>
+        <div class="image-container" onclick="openModal('sample-3.png')">
+            <img src="sample-3.png" alt="Image 3">
+            <div class="hover-text">Description 3</div>
+        </div>
+        <div class="image-container" onclick="openModal('sample-4.png')">
+            <img src="sample-4.png" alt="Image 4">
+            <div class="hover-text">Description 4</div>
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        function openModal(imageSrc) {
+            const modal = document.getElementById('myModal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = imageSrc; // Set the source of the modal image
+            modal.style.display = "block"; // Show the modal
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('myModal');
+            modal.style.display = "none"; // Hide the modal
+        }
+    </script>
+</body>
+</html>
