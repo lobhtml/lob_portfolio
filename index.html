@@ -4,54 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luke O'Brien</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap" rel="stylesheet"> <!-- Link to Roboto Mono font -->
     <style>
         body {
-            font-family: 'Roboto Mono', monospace;
+            font-family: 'Roboto Mono', monospace; /* Use Roboto Mono font */
             background-color: #000000;
             padding: 20px;
             transition: background-color 0.3s, color 0.3s;
-            text-align: center;
-            color: rgb(255, 255, 255);
+            text-align: center; /* Center text for the whole body */
+            color: rgb(255, 255, 255); /* Set text color */
         }
 
         h1 {
             font-size: 25px;
-            margin-top: 0px;
+            margin-top: 0px; /* Add some space between the image and the h1 */
         }
 
         .logo {
-            max-width: 100px;
-            margin: 0 auto;
-            display: block;
+            max-width: 100px; /* Maintain max-width */
+            margin: 0 auto; /* Center the image */
+            display: block; /* Make the image a block element to center it */
         }
         
         .bio {
-            border: 1px solid #ffffff;
-            padding: 15px;
-            max-width: 500px;
-            margin: 20px auto;
-            font-size: 18px;
-            background-color: transparent;
+            border: 1px solid #ffffff; /* Border around the bio */
+            padding: 15px; /* Padding inside the bio */
+            max-width: 500px; /* Max width for the bio */
+            margin: 20px auto; /* Center the bio */
+            font-size: 18px; /* Font size for the bio */
+            background-color: transparent; /* No background color */
         }
         
         .gallery {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            gap: 20px; /* Space between images */
         }
 
         .image-container {
             position: relative;
-            overflow: hidden;
-            border: 1px solid #ffffff;
-            cursor: pointer;
+            overflow: hidden; /* Hide overflow for hover effect */
+            border: 1px solid #ffffff; /* Optional border */
+            cursor: pointer; /* Change cursor to pointer */
         }
 
         .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Adjust to maintain aspect ratio */
+            width: 100%; /* Make images responsive */
             display: block;
         }
 
@@ -62,36 +60,37 @@
             transform: translate(-50%, -50%);
             color: #ffffff;
             font-size: 24px;
-            opacity: 0;
-            transition: opacity 0.3s;
+            opacity: 0; /* Start hidden */
+            transition: opacity 0.3s; /* Smooth transition */
         }
 
         .image-container:hover .hover-text {
-            opacity: 1;
+            opacity: 1; /* Show text on hover */
         }
 
         .image-container:hover img {
-            filter: brightness(0.7);
+            filter: brightness(0.7); /* Darken image on hover */
         }
 
+        /* Modal styles */
         .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
             left: 0;
             top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.9);
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
         }
 
         .modal img {
             margin: auto;
             display: block;
-            max-width: 70%; /* Allow larger images to be viewed properly */
-            max-height: 70%; /* Maintain aspect ratio */
-            margin-top: 5%;
+            max-width: 80%; /* Responsive max width */
+            max-height: 80%; /* Responsive max height */
+            margin-top: 5%; /* Top margin for spacing */
         }
 
         .close {
@@ -103,57 +102,31 @@
             font-weight: bold;
             cursor: pointer;
         }
-
-        .modal-info {
-            text-align: center;
-            color: #ffffff;
-            margin-top: 20px;
-        }
-
-        .modal-info a {
-            color: #00ff00; /* Green color for modal link */
-            text-decoration: underline; /* Underline */
-        }
-
-        .link-underline {
-            color: #00ff00 !important; /* Ensure green color */
-            text-decoration: underline; /* Underline */
-        }
-
-        .center {
-            text-align: center; /* Center the text */
-            margin-top: 20px; /* Optional: Add some space above */
-        }
     </style>
 </head>
 <body>
     <img src="lobhtml.png" alt="Luke O'Brien Website" class="logo" />
     <h1>Luke O'Brien</h1>
-    <div class="center">
-        <a href="https://youtube.com/playlist?list=PLBBxSYze67efw4EaeyELENOpRCZn5cpjM&" class="link-underline">YouTube archive</a>
-        <a href="https://github.com/lobhtml" class="link-underline">GitHub profile</a> <!-- New link -->
-    </div>
-    
     <div class="bio">
         Web developer focused on classic UI/UX design, emulation, and niche operating systems.
     </div>
-    <h1>Project portfolio</h1>
+    <h1>Image Gallery</h1>
     <div class="gallery">
         <div class="image-container" onclick="openModal('sample-1.png')">
             <img src="sample-1.png" alt="Image 1">
-            <div class="hover-text">Learn more</div>
+            <div class="hover-text">Description 1</div>
         </div>
         <div class="image-container" onclick="openModal('sample-2.png')">
             <img src="sample-2.png" alt="Image 2">
-            <div class="hover-text">Learn more</div>
+            <div class="hover-text">Description 2</div>
         </div>
         <div class="image-container" onclick="openModal('sample-3.png')">
             <img src="sample-3.png" alt="Image 3">
-            <div class="hover-text">Learn more</div>
+            <div class="hover-text">Description 3</div>
         </div>
         <div class="image-container" onclick="openModal('sample-4.png')">
             <img src="sample-4.png" alt="Image 4">
-            <div class="hover-text">Learn more</div>
+            <div class="hover-text">Description 4</div>
         </div>
     </div>
 
@@ -161,62 +134,26 @@
     <div id="myModal" class="modal" onclick="closeModal()">
         <span class="close" onclick="closeModal()">&times;</span>
         <img class="modal-content" id="modalImage">
-        <div id="modalInfo" class="modal-info">
-            <p id="modalDescription"></p>
-            <a id="modalLink" href="#" target="_blank">Watch here</a>
-        </div>
     </div>
-    
     <footer style="margin-top: 20px; text-align: center; font-size: 12px; color: gray;">
         &copy; <span id="currentYear"></span> v1.4 Created by Luke O'Brien.
     </footer>
-    
     <script>
-        const images = [
-            {
-                src: 'sample-1.png',
-                description: 'Retro Terminal Emulator [cool-retro-term] - Raspberry Pi OS Install Guide',
-                link: 'https://www.youtube.com/watch?v=zzhuQvmMzHM'
-            },
-            {
-                src: 'sample-2.png',
-                description: 'XPnote [v1.4] CSS Update - Windows XP Font, UI/UX Design Overhaul',
-                link: 'https://www.youtube.com/watch?v=waIba53xNzk'
-            },
-            {
-                src: 'sample-3.png',
-                description: 'XPnote [v1.1] Classic Notepad - Built Using HTML, CSS & JavaScript',
-                link: 'https://www.youtube.com/watch?v=Ni9HJjzLtBM'
-            },
-            {
-                src: 'sample-4.png',
-                description: 'GameBoy Advance Emulator [VisualBoyAdvance] - Raspberry Pi OS Install Guide',
-                link: 'https://www.youtube.com/watch?v=o_KE594W3Js'
-            }
-        ];
-
         function openModal(imageSrc) {
             const modal = document.getElementById('myModal');
             const modalImage = document.getElementById('modalImage');
-            const modalDescription = document.getElementById('modalDescription');
-            const modalLink = document.getElementById('modalLink');
-
-            const imageData = images.find(image => image.src === imageSrc);
-            if (imageData) {
-                modalImage.src = imageData.src;
-                modalDescription.textContent = imageData.description;
-                modalLink.href = imageData.link;
-            }
-
-            modal.style.display = "block";
+            modalImage.src = imageSrc; // Set the source of the modal image
+            modal.style.display = "block"; // Show the modal
         }
 
         function closeModal() {
             const modal = document.getElementById('myModal');
-            modal.style.display = "none";
+            modal.style.display = "none"; // Hide the modal
         }
-
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+    </script>
+    <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
